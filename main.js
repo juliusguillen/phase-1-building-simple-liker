@@ -3,9 +3,27 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+*document.querySelector(".like").addEventListener("click", mimicServerCall)
+const modal = document.querySelector(".hidden")
+setTimeout( function () {
+   alert("error");
+}, 3000);
 
 
+const likes = document.querySelectorAll(".like-glyph")
+for (const like of likes){
+  like.addEventListener('click', likesCallBack)
+}
 
+function likesCallBack () {
+  mimicServerCall().then(function(response){
+    console.log(response)
+  })
+  .catch(function (error){
+   
+    console.log(error)
+  })
+}
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
